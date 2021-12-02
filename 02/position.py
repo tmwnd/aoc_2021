@@ -1,8 +1,7 @@
 position = [0, 0]
 
 with open('data.txt') as data:
-    line = data.readline()
-    while line:
+    for line in data:
         line = (line.split(" "))
         move = {
             "forward": [int(line[1]), 0],
@@ -12,6 +11,4 @@ with open('data.txt') as data:
 
         for i in range(2):
             position[i] += move[i]
-
-        line = data.readline()
     print("Position: " + str(position) + " (" + str(position[0] * position[1]) + ")")
